@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import "../index.css";
 import Confetti from "../components/ui/confetti";
@@ -100,10 +101,15 @@ const ReviewCard = ({ img, name, username, body }) => {
 function App() {
   const [showDialog, setShowDialog] = useState(false);
   const [confettiTrigger, setConfettiTrigger] = useState(false);
+  const navigate=useNavigate();
 
   const handleConfetti = () => {
     setConfettiTrigger(true);
     setTimeout(() => setConfettiTrigger(false), 3000);
+  };
+
+  const handleGetStarted = () => {
+    navigate("/auth");
   };
 
   return (
@@ -135,7 +141,7 @@ function App() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <button
-              onClick={handleConfetti}
+              onClick={handleGetStarted}
               className="px-8 py-4 bg-white text-gray-800 font-semibold rounded-full shadow-lg hover:scale-110 transition-transform"
             >
               Get Started

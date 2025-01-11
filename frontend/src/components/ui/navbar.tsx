@@ -1,8 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -10,6 +13,11 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleGetStarted = () => {
+    navigate("/auth");
+  };
+
   return (
     <nav
       className={cn(
@@ -31,7 +39,7 @@ export default function Navbar() {
             <a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">
               Testimonials
             </a>
-            <button className="bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
+            <button onClick={handleGetStarted} className="bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
               Get Started
             </button>
           </div>
