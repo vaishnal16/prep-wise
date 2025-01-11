@@ -5,21 +5,13 @@ import LandingPage from './pages/LandingPage';
 import RoadmapPage from './pages/RoadmapPage';
 import Authpages from './pages/Authpages';
 import Dashboard from './pages/Dashboard';
+import InterviewPrep from './pages/InterviewPrep';
 
 
 export default function App() {
   return (
     <>
-    {/* <div style={{ width: '100%', height: '100vh' }}>
-      <iframe
-        src="http://localhost:8501"
-        style={{ width: '100%', height: '100%', border: 'none' }}
-        title="Streamlit UI"
-      ></iframe>
-    </div> */}
-
-
-    <Router>
+     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/auth" element={<Authpages />} />
@@ -31,6 +23,8 @@ export default function App() {
             </PrivateRoute>
           }
           />
+        <Route path="/roadmap" element={<RoadmapPage />} />
+        <Route path="/interview-prep" element={<InterviewPrep />} />
       </Routes>
     </Router>
     </>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { BookOpen, FileText, MapPin } from 'lucide-react';
 
 const Dashboard = () => {
@@ -22,14 +23,14 @@ const Dashboard = () => {
                 <FileText className="w-5 h-5 mr-1" />
                 Resume
               </a>
-              <a href="/interview" className="flex items-center text-gray-700 hover:text-indigo-600">
+              <Link to="/interview-prep" className="flex items-center text-gray-700 hover:text-indigo-600">
                 <BookOpen className="w-5 h-5 mr-1" />
                 Interview Prep
-              </a>
-              <a href="/roadmap" className="flex items-center text-gray-700 hover:text-indigo-600">
+              </Link>
+              <Link to="/roadmap" className="flex items-center text-gray-700 hover:text-indigo-600">
                 <MapPin className="w-5 h-5 mr-1" />
                 Roadmap
-              </a>
+              </Link>
             </div>
           </div>
         </div>
