@@ -112,59 +112,182 @@ if 'current_question' not in st.session_state:
 if 'pdf_content' not in st.session_state:
     st.session_state.pdf_content = None
 
-st.title("Technical Interview Practice")
+st.set_page_config(page_title="Technical Interview Practice", layout="wide")
 
-topic = st.selectbox("Select Topic:", ["Algorithms", "Data Structures", "Machine Learning", "Operating Systems", "Networking"])
-uploaded_file = st.file_uploader("Upload Study Material (PDF)", type="pdf")
+# Custom CSS
+st.markdown("""
+<style>
+    /* Global styles */
+    .stApp {
+        background: linear-gradient(135deg, #f3e8ff 0%, #ffffff 50%, #f3e8ff 100%);
+    }
+    
+    /* Header styling */
+   .main-header {
+    color: #4f46e5; 
+    font-family: 'Poppins', sans-serif; 
+    padding: 1.5rem 0; /* Balanced spacing for larger headers */
+    text-align: center;
+    font-size: 3rem; /* Slightly larger font size for emphasis */
+    font-weight: 700; /* Bold, but not overly heavy */
+    margin-bottom: 2rem; /* Creates visual separation */
+    background: linear-gradient(to right, #ffffff, #e0e7ff); /* Soft gradient for a subtle highlight */
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* More depth with soft shadows */
+    border: 1px solid #e5e7eb; /* Light border for structure */
+    max-width: 800px; /* Limits the width of the header to maintain focus */
+    margin-left: auto;
+    margin-right: auto; /* Center the header on the page */
+}
 
-if uploaded_file and not st.session_state.pdf_content:
-    st.session_state.pdf_content = extract_text_from_pdf(uploaded_file)
+    
+    /* Card container */
+    .card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1rem;
+    }
+    
+    /* Question styling */
+    .question-header {
+        color: #6b21a8;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    
+    /* Button styling */
+    .stButton > button {
+        background-color: #8b5cf6;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    
+    .stButton > button:hover {
+        background-color: #7c3aed;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Radio button styling */
+    .stRadio > label {
+        color: #4c1d95;
+        font-weight: 500;
+    }
+    
+    /* Select box styling */
+    .stSelectbox > div > div {
+        background-color: white;
+        border: 1px solid #d8b4fe;
+        border-radius: 8px;
+    }
+    
+    /* File uploader styling */
+    .stFileUploader > div {
+        background-color: white;
+        border: 2px dashed #d8b4fe;
+        border-radius: 8px;
+        padding: 1rem;
+    }
+    
+    /* Feedback messages */
+    .success-feedback {
+        color: #15803d;
+        background-color: #dcfce7;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+    }
+    
+    .error-feedback {
+        color: #991b1b;
+        background-color: #fee2e2;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+    }
+</style>
+""", unsafe_allow_html=True)
 
+# Main UI
+st.markdown('<h1 class="main-header">Technical Interview Practice</h1>', unsafe_allow_html=True)
+
+with st.container():
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        topic = st.selectbox("📚 Select Topic:", 
+                           ["Algorithms", "Data Structures", "Machine Learning", 
+                            "Operating Systems", "Networking"])
+    with col2:
+        uploaded_file = st.file_uploader("📄 Upload Study Material (PDF)", 
+                                       type="pdf")
+    st.markdown('</div>', unsafe_allow_html=True)
+
+# Action buttons
 col1, col2 = st.columns(2)
 with col1:
-    if st.button("Generate MCQ from Topic"):
-        question_response = generate_question(topic)
-        if question_response:
-            st.session_state.current_question = parse_question(question_response)
-            st.session_state.questions.append(question_response)
-
-with col2:
-    if st.button("Generate MCQ from PDF"):
-        if st.session_state.pdf_content:
-            question_response = generate_question(topic, st.session_state.pdf_content)
+    if st.button("🎯 Generate Topic MCQ"):
+        with st.spinner("Generating question..."):
+            question_response = generate_question(topic)
             if question_response:
                 st.session_state.current_question = parse_question(question_response)
                 st.session_state.questions.append(question_response)
+
+with col2:
+    if st.button("📚 Generate PDF MCQ"):
+        if st.session_state.pdf_content:
+            with st.spinner("Analyzing PDF and generating question..."):
+                question_response = generate_question(topic, st.session_state.pdf_content)
+                if question_response:
+                    st.session_state.current_question = parse_question(question_response)
+                    st.session_state.questions.append(question_response)
         else:
             st.error("Please upload study material first.")
 
+# Display current question
 if st.session_state.current_question:
-    st.markdown(f"### Question")
+    st.markdown('<div class="card">', unsafe_allow_html=True)
+    st.markdown('<div class="question-header">📝 Question</div>', unsafe_allow_html=True)
     st.write(st.session_state.current_question['question'])
 
     options = st.session_state.current_question['options']
-    selected_option = st.radio("Select answer:", options)
+    selected_option = st.radio("Select your answer:", options)
 
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns([1, 1, 1])
     with col1:
-        if st.button("Submit Answer"):
+        if st.button("✅ Submit Answer"):
             feedback = evaluate_answer(st.session_state.current_question, selected_option)
-            st.markdown(feedback)
+            if "Score: 10" in feedback:
+                st.markdown(f'<div class="success-feedback">{feedback}</div>', unsafe_allow_html=True)
+            else:
+                st.markdown(f'<div class="error-feedback">{feedback}</div>', unsafe_allow_html=True)
 
     with col2:
-        if st.button("Speak Answer"):
+        if st.button("🎤 Speak Answer"):
             spoken_option = recognize_speech()
             if spoken_option:
                 st.info(f"Your answer: {spoken_option}")
                 feedback = evaluate_answer(st.session_state.current_question, spoken_option)
-                st.markdown(feedback)
+                if "Score: 10" in feedback:
+                    st.markdown(f'<div class="success-feedback">{feedback}</div>', unsafe_allow_html=True)
+                else:
+                    st.markdown(f'<div class="error-feedback">{feedback}</div>', unsafe_allow_html=True)
 
-    if st.button("Next Question"):
-        if st.session_state.pdf_content:
-            question_response = generate_question(topic, st.session_state.pdf_content)
-        else:
-            question_response = generate_question(topic)
-        
-        if question_response:
-            st.session_state.current_question = parse_question(question_response)
-            st.session_state.questions.append(question_response)
+    with col3:
+        if st.button("➡️ Next Question"):
+            with st.spinner("Generating next question..."):
+                if st.session_state.pdf_content:
+                    question_response = generate_question(topic, st.session_state.pdf_content)
+                else:
+                    question_response = generate_question(topic)
+                
+                if question_response:
+                    st.session_state.current_question = parse_question(question_response)
+                    st.session_state.questions.append(question_response)
+    
+    st.markdown('</div>', unsafe_allow_html=True)
