@@ -6,12 +6,13 @@ import RoadmapPage from './pages/RoadmapPage';
 import Authpages from './pages/Authpages';
 import Dashboard from './pages/Dashboard';
 import InterviewPrep from './pages/InterviewPrep';
+import ResumeBuilder from './pages/ResumeBuilder';
 
 
 export default function App() {
   return (
     <>
-     <Router>
+   <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/auth" element={<Authpages />} />
@@ -25,8 +26,9 @@ export default function App() {
           />
         <Route path="/roadmap" element={<RoadmapPage />} />
         <Route path="/interview-prep" element={<InterviewPrep />} />
+        <Route path="/resume" element={<ResumeBuilder />} />
       </Routes>
-    </Router>
+    </Router> 
     </>
   )
 }

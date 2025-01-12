@@ -19,10 +19,10 @@ const Dashboard = () => {
 
             {/* Navigation Links */}
             <div className="flex space-x-8">
-              <a href="/resume" className="flex items-center text-gray-700 hover:text-indigo-600">
+              <Link to="/resume" className="flex items-center text-gray-700 hover:text-indigo-600">
                 <FileText className="w-5 h-5 mr-1" />
                 Resume
-              </a>
+              </Link>
               <Link to="/interview-prep" className="flex items-center text-gray-700 hover:text-indigo-600">
                 <BookOpen className="w-5 h-5 mr-1" />
                 Interview Prep
