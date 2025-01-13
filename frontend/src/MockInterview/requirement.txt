@@ -5,3 +5,4 @@ pyaudio
 PyPDF2
 requests
 keyboard
+pyaudio

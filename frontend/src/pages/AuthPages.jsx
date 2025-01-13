@@ -33,6 +33,7 @@ const AuthPages = () => {
       });
       
       const data = await response.json();
+      console.log(data);
       if (response.ok) {
         // Store the token and user data
         localStorage.setItem('token', data.token);
