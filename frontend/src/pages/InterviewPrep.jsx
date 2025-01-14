@@ -4,19 +4,7 @@ import { motion } from 'framer-motion';
 
 const InterviewPrep = () => {
   return (
-    <div className="relative w-full h-screen bg-gradient-to-br from-purple-200 to-purple-400 flex items-center justify-center">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-center mb-12"
-      >
-        {/* Change the text color to white */}
-        <SparklesText>Get Your Personalized Roadmap</SparklesText>
-        <p className="mt-4 text-lg">
-          Create a customized learning journey tailored to your goals and pace
-        </p>
-      </motion.div>
-      
+    <div className="relative w-full h-screen bg-gradient-to-br from-purple-200 to-purple-400 flex justify-center items-center">
       {/* Grid Background */}
       <div
         className="absolute inset-0"
@@ -27,17 +15,27 @@ const InterviewPrep = () => {
         }}
       ></div>
       
-      {/* Glass Effect Container */}
-      <div className="relative w-11/12 h-5/6 backdrop-blur-sm bg-white/10 rounded-xl shadow-2xl border border-white/20 overflow-hidden">
-        {/* Header Bar */}
+      {/* Main Content Wrapper */}
+      <div className="relative flex flex-col items-center justify-center w-full h-full">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-8"
+        >
+          {/* Change the text color to white */}
+          <SparklesText>Master Your Exam With PrepWise</SparklesText>
+        </motion.div>
         
-        {/* Main Content */}
-        <div className="w-full h-[calc(100%-3rem)]">
-          <iframe
-            src="http://localhost:8501"
-            className="w-full h-full"
-            title="Streamlit UI"
-          ></iframe>
+        {/* Glass Effect Container */}
+        <div className="relative w-11/12 max-w-4xl h-5/6 backdrop-blur-sm bg-white/10 rounded-xl shadow-2xl border border-white/20 overflow-hidden">
+          {/* Main Content */}
+          <div className="w-full h-full">
+            <iframe
+              src="http://localhost:8501"
+              className="w-full h-full"
+              title="Streamlit UI"
+            ></iframe>
+          </div>
         </div>
       </div>
       

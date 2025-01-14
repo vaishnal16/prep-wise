@@ -53,8 +53,9 @@ const Dashboard = () => {
             <div className="hidden md:flex items-center space-x-8">
               {[
                 { to: "/resume", icon: FileText, label: "Resume" },
-                { to: "/interview-prep", icon: BookOpen, label: "Interview Prep" },
-                { to: "/roadmap", icon: MapPin, label: "Roadmap" }
+                { to: "/exam-prep", icon: BookOpen, label: "Exam Prep" },
+                { to: "/roadmap", icon: MapPin, label: "Roadmap" },
+                { to: "/interview-prep", icon: MapPin, label: "Interview Prep" }
               ].map(({ to, icon: Icon, label }) => (
                 <Link
                   key={to}
@@ -65,9 +66,6 @@ const Dashboard = () => {
                   {label}
                 </Link>
               ))}
-              <button className="bg-black text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:bg-slate-800 hover:shadow-lg transform hover:-translate-y-0.5">
-                Get Started
-              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -85,8 +83,9 @@ const Dashboard = () => {
           <div className="px-4 py-3 space-y-2">
             {[
               { to: "/resume", icon: FileText, label: "Resume" },
-              { to: "/interview-prep", icon: BookOpen, label: "Interview Prep" },
-              { to: "/roadmap", icon: MapPin, label: "Roadmap" }
+              { to: "/exam-prep", icon: BookOpen, label: "Exam Prep" },
+              { to: "/roadmap", icon: MapPin, label: "Roadmap" },
+              { to: "/interview-prep", icon: MapPin, label: "Interview Prep" }
             ].map(({ to, icon: Icon, label }) => (
               <Link
                 key={to}
@@ -97,9 +96,6 @@ const Dashboard = () => {
                 {label}
               </Link>
             ))}
-            <button className="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-indigo-700">
-              Get Started
-            </button>
           </div>
         </div>
       </nav>

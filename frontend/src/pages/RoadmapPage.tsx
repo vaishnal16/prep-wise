@@ -45,56 +45,56 @@ const App: React.FC = () => {
       const prompt = `
         I am a ${learningSpeed} aiming to prepare for ${endGoal} at a ${learningLevel} level. My preparation timeline is from ${startDate} to ${endDate}. Ensure the references and YouTube channel links are correct and legitimate, and provide clickable hyperlinks so users can directly access them.
 
-Please keep in mind the following:
+        Please keep in mind the following:
 
-JEE has three subjects: Physics, Chemistry, and Mathematics.
-GATE has 7 subjects.
-UPSC has 3 subjects.
-CA has 2 subjects.
-Provide the following information:
-
-Goal: A one-line description of the end goal.
-
-Daily Study Plan:
-
-Include a day-wise and topic-wise study plan.
-Provide clickable references for each topic.
-Present the study plan in a bullet point format.
-Example structure 
-
-Day	Topic	Reference
-Day 1-2	Physics: Kinematics	Kinematics - Khan Academy
-Day 3-4	Physics: Dynamics	Dynamics - BYJU'S
-...	...	...
-YouTube Channels:
-
-Provide a list of YouTube channels for JEE preparation.Also use the youtube api to get the correct links for the channels ensure the links are correct and refer to the correct channel.Only list and provide clickable links which are correct and ensure you double-check them.
-Separate the channels into English and Hindi categories.
-English:
-
-Hindi:
-
-Books List:
-
-Include a list of recommended books for JEE preparation, separated by subject.
-Physics:
-
-
-Chemistry:
-
-
-Mathematics:
-
-
-Websites:
-
-Provide a list of helpful websites for JEE preparation.
-
-
-
-Additional Tips:
-
-Please ensure that the references and resources are reliable and up-to-date. The study plan should be detailed, and each element should be accessible with the provided hyperlinks.
+        JEE has three subjects: Physics, Chemistry, and Mathematics.
+        GATE has 7 subjects.
+        UPSC has 3 subjects.
+        CA has 2 subjects.
+        Provide the following information:
+        
+        Goal: A one-line description of the end goal.
+        
+        Daily Study Plan:
+        
+        Include a day-wise and topic-wise study plan.
+        Provide clickable references for each topic.
+        Present the study plan in a bullet point format.
+        Example structure 
+        
+        Day	Topic	Reference
+        Day 1-2	Physics: Kinematics	Kinematics - Khan Academy
+        Day 3-4	Physics: Dynamics	Dynamics - BYJU'S
+        ...	...	...
+        YouTube Channels:
+        
+        Provide a list of YouTube channels for JEE preparation.Also use the youtube api to get the correct links for the channels ensure the links are correct and refer to the correct channel.Only list and provide clickable links which are correct and ensure you double-check them.
+        Separate the channels into English and Hindi categories.
+        English:
+        
+        Hindi:
+        
+        Books List:
+        
+        Include a list of recommended books for JEE preparation, separated by subject.
+        Physics:
+        
+        
+        Chemistry:
+        
+        
+        Mathematics:
+        
+        
+        Websites:
+        
+        Provide a list of helpful websites for JEE preparation.
+        
+        
+        
+        Additional Tips:
+        
+        Please ensure that the references and resources are reliable and up-to-date. The study plan should be detailed, and each element should be accessible with the provided hyperlinks.
       `;
 
       const response = await callConsoleGroqApi(prompt, systemMessage);

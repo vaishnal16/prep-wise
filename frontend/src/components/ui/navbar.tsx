@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import Logo from "../../assets/PrepLogo.png";
+import Name from "../../assets/PrepNameW.png";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
@@ -30,7 +32,22 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <span className="text-white text-xl font-bold">PrepWise</span>
+          <div className="flex items-center group cursor-pointer">
+              <div className="flex-shrink-0">
+              <img 
+                  src={Logo} 
+                  alt="PrepWise Logo" 
+                  className="h-12 w-12 object-contain transform transition-all duration-300 group-hover:rotate-12 rounded-2xl"
+                />
+              </div>
+              <div className="ml-3">
+                <img 
+                  src={Name} 
+                  alt="PrepWise" 
+                  className="h-8 object-contain transition-all duration-300 group-hover:scale-105"
+                />
+              </div>
+            </div>
           </div>
           <div className="flex items-center space-x-4">
             <a href="#features" className="text-gray-300 hover:text-white transition-colors">

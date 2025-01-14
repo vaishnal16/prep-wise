@@ -7,6 +7,7 @@ import Authpages from './pages/Authpages';
 import Dashboard from './pages/Dashboard';
 import InterviewPrep from './pages/InterviewPrep';
 import ResumeBuilder from './pages/ResumeBuilder';
+import MockInterviewPrep from './pages/MockInterviewpPrep';
 
 
 export default function App() {
@@ -25,8 +26,9 @@ export default function App() {
           }
           />
         <Route path="/roadmap" element={<RoadmapPage />} />
-        <Route path="/interview-prep" element={<InterviewPrep />} />
+        <Route path="/exam-prep" element={<InterviewPrep />} />
         <Route path="/resume" element={<ResumeBuilder />} />
+        <Route path="/interview-prep" element={<MockInterviewPrep />} />
       </Routes>
     </Router> 
     </>

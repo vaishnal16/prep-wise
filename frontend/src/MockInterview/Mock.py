@@ -215,7 +215,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Main UI
-st.markdown('<h1 class="main-header">Technical Interview Practice</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-header">Exam Preparation </h1>', unsafe_allow_html=True)
 
 with st.container():
     col1, col2 = st.columns([2, 1])
