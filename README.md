@@ -4,7 +4,10 @@ A revolutionary platform to simplify exam preparation, resume building, and inte
 
 ## 🎯 Problem Statement
 
-Preparing for competitive exams, building professional resumes, practicing topic-specific MCQs, and preparing for interviews often lack personalization and efficiency. Current resources do not offer tailored solutions that adapt to individual timelines, learning paces, and goals. Additionally, the absence of interactive tools for interview preparation limits candidates' confidence and readiness.
+Preparing for competitive exams, crafting professional resumes, practicing topic-specific MCQs, and preparing for interviews often lack:  
+- Personalization and efficiency.  
+- Tailored solutions that adapt to individual timelines, learning paces, and goals.  
+- Interactive tools to build candidates' confidence and readiness.  
 
 PrepWise addresses these challenges by creating an all-in-one platform that enhances the preparation process with AI-driven technologies.
 
@@ -144,6 +147,6 @@ We welcome contributions to PrepWise! Please read our contributing guidelines be
 ## 📞 Contact
 
 For any queries regarding the project, please reach out to:  
-[aryanpatankar@gmail.com](mailto:aryanpatankar@gmail.com),  
+[aryanpatankar27@gmail.com](mailto:aryanpatankar27@gmail.com),  
 [vaishnal16305@gmail.com](mailto:vaishnal16305@gmail.com),
- [nirajsk10912@gmail.com](mailto:nirajsk10912@gmail.com) 
+[nirajsk10912@gmail.com](mailto:nirajsk10912@gmail.com) 
