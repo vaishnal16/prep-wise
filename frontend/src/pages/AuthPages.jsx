@@ -20,8 +20,8 @@ const AuthPages = () => {
     setError('');
     
     const endpoint = isLogin 
-      ? 'http://localhost:5000/api/login'
-      : 'http://localhost:5000/api/signup';
+      ? 'https://prep-wise.onrender.com/api/login'
+      : 'https://prep-wise.onrender.com/api/signup';
     
     try {
       const response = await fetch(endpoint, {
