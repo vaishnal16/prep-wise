@@ -15,9 +15,9 @@ PrepWise addresses these challenges by creating an all-in-one platform that enha
 
 **Team Name:** Innovation Titans  
 **Team Members:**  
-- Aryan Patankar  
-- Vaishnal Mali  
-- Niraj Kothawade  
+- Aryan Patankar (VESIT, Mumbai)
+- Vaishnal Mali (VESIT, Mumbai)
+- Niraj Kothawade (VESIT, Mumbai)
 
 ## 🌐 Domain
 
