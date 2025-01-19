@@ -29,7 +29,30 @@ EdTech | AI-Driven Solutions | Career Development
 
 ## 🌟 Screenshots 📸
 
-*(Add relevant screenshots for better visualization)*
+**Landing page**
+![WhatsApp Image 2025-01-19 at 20 32 34_5529cfaa](https://github.com/user-attachments/assets/fe2465e6-4b2a-4414-a74b-73079afb8c5c)
+![WhatsApp Image 2025-01-19 at 20 33 21_06bda153](https://github.com/user-attachments/assets/676f3be6-a1a3-4342-9e8f-f90cc8c5b655)
+![WhatsApp Image 2025-01-19 at 20 34 28_6a9cf162](https://github.com/user-attachments/assets/a8765bec-6c67-4be9-9521-ac7cd9b9544e)
+
+**Login And SignUp**
+![WhatsApp Image 2025-01-19 at 20 37 17_86e0611c](https://github.com/user-attachments/assets/4759a9e0-4517-4f35-a731-8e8f92708600)
+![WhatsApp Image 2025-01-19 at 20 37 45_c7e83cc3](https://github.com/user-attachments/assets/e4288e74-e305-4f7f-b392-e8f56a763443)
+
+**Dashboard**
+![image](https://github.com/user-attachments/assets/52cf0fde-8949-416d-921c-74c79660f5e2)
+![image](https://github.com/user-attachments/assets/c4a4fbfe-c652-4dab-98e5-a999714722c9)
+
+**Technical Interview**
+![image](https://github.com/user-attachments/assets/cee322f7-4afa-49fd-a32e-bafb699b693a)
+
+**Roadmap**
+![image](https://github.com/user-attachments/assets/d7f45229-b6cd-4261-a19a-78a5ec14cbf7)
+
+**Exam Prep**
+![image](https://github.com/user-attachments/assets/e8047706-953e-49db-938a-08d96d24014d)
+
+**Resume Builder**
+![image](https://github.com/user-attachments/assets/a66c0315-1bae-4183-880a-94c18677c085)
 
 ## 🚀 Getting Started
 
@@ -71,11 +94,20 @@ EdTech | AI-Driven Solutions | Career Development
    ```bash
    npm run dev
    ```
+   For AI Integration:
+   ```bash
+   cd frontend/src/MockInterview
+   pip install -r requirement.txt
+   streamlit run Mock.py
+   ```
+    ```bash Open New Terminal
+   cd frontend/src/MockInterview
+   streamlit run main.py
+   ```
 
 ## 🎯 Future Enhancements
 
 - Multi-language support for wider accessibility
-- Real-time speech-to-text integration for interviews
 - Expanding the roadmap feature to include more exams and industries
 - Cloud infrastructure to support increased user traffic
 - Enhanced AI models for better accuracy
@@ -103,7 +135,7 @@ EdTech | AI-Driven Solutions | Career Development
 
 ## 🎥 Demo Link
 
-[Watch Demo Here](https://your-demo-link.com) *(Replace with the actual video link)*
+[Watch Demo Here](https://drive.google.com/file/d/1eyT8mFQEynVKEjy92XuIg-exx-AgS3zR/view)
 
 ## 🤝 Contributing
 
@@ -112,6 +144,6 @@ We welcome contributions to PrepWise! Please read our contributing guidelines be
 ## 📞 Contact
 
 For any queries regarding the project, please reach out to:  
-[aryanpatankar@example.com](mailto:aryanpatankar@example.com)  
-[vaishnalmali@example.com](mailto:vaishnalmali@example.com)
-[aryanpatankar@example.com](mailto:aryanpatankar@example.com) 
+[aryanpatankar@gmail.com](mailto:aryanpatankar@gmail.com),  
+[vaishnal16305@gmail.com](mailto:vaishnal16305@gmail.com),
+ [nirajsk10912@gmail.com](mailto:nirajsk10912@gmail.com) 
